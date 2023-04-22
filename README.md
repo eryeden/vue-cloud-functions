@@ -36,3 +36,22 @@ As an initial phase of this project, the focus is on implementing the ability to
 Key features of this project include the following:
 - Creating the GCP's cloud functions
 - Utilizing the cloud functions feature from Vue
+
+
+## Project memo
+### GCP cloud functions
+I have followed the tutorial [here](https://cloud.google.com/functions/docs/tutorials/http?hl=ja).
+You need to set up `gcloud cli`. Please refer to [here](https://cloud.google.com/sdk/docs/install?hl=ja#deb) for the latest information.
+```bash
+sudo apt-get install apt-transport-https ca-certificates gnupg
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+sudo apt-get update && sudo apt-get install google-cloud-cli
+gcloud init
+```
+You can run `gcloud init` and select the current project.
+
+
+
+
+
