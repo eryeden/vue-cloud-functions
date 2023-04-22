@@ -87,6 +87,11 @@ If you want to know the endpoint of this function,
 gcloud functions describe python-http-function --gen2 --region asia-northeast1 --format="value(serviceConfig.uri)"
 ```
 
-
+### Vue
+```bash
+npm init vue@latest
+cd vue-cloud-functions/
+npm install
+```
 
 
