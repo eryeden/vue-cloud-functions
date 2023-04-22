@@ -39,7 +39,7 @@ Key features of this project include the following:
 
 
 ## Project memo
-### GCP cloud functions
+### GCP Cloud Functions
 I have followed the tutorial [here](https://cloud.google.com/functions/docs/tutorials/http?hl=ja).
 You need to set up `gcloud cli`. Please refer to [here](https://cloud.google.com/sdk/docs/install?hl=ja#deb) for the latest information.
 ```bash
@@ -51,6 +51,41 @@ gcloud init
 ```
 You can run `gcloud init` and select the current project.
 
+When working in the cloud-function environment, it's acceptable to have the `requirements.txt` file included in the repository. For managing the Python environment in this project, we are using `poetry`.
+Please refer to [here](https://cloud.google.com/python/docs/setup?hl=ja#linux).
+```bash
+pyenv local 3.11.3
+python -m venv .venv
+poetry init
+poetry shell
+poetry add google-cloud-storage   # This package is mandatory for the GCP project.
+poetry add functions-framework
+```
+
+To test the function, you can use `functions-framework`:
+```bash
+cd cloud_functions/hello_world
+functions-framework --target hello_get --debug
+```
+`--target` argument should be the name of the function.
+
+In order to upload the function to Cloud-functions, the following command is needed:
+```bash
+cd cloud_functions/hello_world
+gcloud functions deploy python-http-function \
+--gen2 \
+--runtime=python311 \
+--region=asia-northeast1 \
+--source=. \
+--entry-point=hello_get \
+--trigger-http \
+--allow-unauthenticated
+```
+
+If you want to know the endpoint of this function, 
+```bash
+gcloud functions describe python-http-function --gen2 --region asia-northeast1 --format="value(serviceConfig.uri)"
+```
 
 
 
