@@ -43,13 +43,10 @@ In this project, the following APIs are defined:
 | /hello | {body: "hello"} |
 | /bye | {body: "bye"} |
 
-GCP API Gateway will be used to realize these API endpoints.
-CORS issues are hundled by using Firebase and GCP internal communication.
+GCP API Gateway will be used to realize these API endpoints. CORS issues are handled by using Firebase and GCP internal communication.
 
 **Local devepment**
-Cloud-functions will be tested by `functions-framework` on local.
-`functions-framework` supports only single endpoint, so that it is hard to test multiple API endpoints.
-**I will try the firebase functions based on Typescript.**
+Cloud functions will be tested by `functions-framework` locally. `Functions-framework` supports only a single endpoint, so it is hard to test multiple API endpoints. **I will try the Firebase functions based on Typescript.**
 
 Vue will be tested by vite.
 
