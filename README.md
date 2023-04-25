@@ -37,6 +37,18 @@ Key features of this project include the following:
 - Creating the GCP's cloud functions
 - Utilizing the cloud functions feature from Vue
 
+In this project, the following APIs are defined:
+| Endpoint | Return |
+| --- | --- |
+| /hello | {body: "hello"} |
+| /bye | {body: "bye"} |
+
+GCP API Gateway will be used to realize these API endpoints.
+CORS issues are hundled by using Firebase and GCP internal communication.
+
+**Local devepment**
+Cloud-functions will be tested by cloud-function framework on local.
+Vue will be tested by vite.
 
 ## Project memo
 ### GCP Cloud Functions
