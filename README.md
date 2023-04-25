@@ -47,7 +47,10 @@ GCP API Gateway will be used to realize these API endpoints.
 CORS issues are hundled by using Firebase and GCP internal communication.
 
 **Local devepment**
-Cloud-functions will be tested by cloud-function framework on local.
+Cloud-functions will be tested by `functions-framework` on local.
+`functions-framework` supports only single endpoint, so that it is hard to test multiple API endpoints.
+**I will try the firebase functions based on Typescript.**
+
 Vue will be tested by vite.
 
 ## Project memo
